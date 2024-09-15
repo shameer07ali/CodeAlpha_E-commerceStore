@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Products Eco-Store {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-3">
+            <div class="card animated content bounce-in">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    {% if product.slug %}
+                    <a href="{% url 'product_detail' product.slug %}" class="btn btn-primary">View Product</a>
+                    {% else %}
+                    <span class="btn btn-secondary">No Details</span>
+                    {% endif %}
+                    {% if user == product.user or user.is_staff %}
+                    <a href="{% url 'delete_product' product.slug %}" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this product?');">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

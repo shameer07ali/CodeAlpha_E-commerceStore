@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Home - E-Commerce Store{% endblock %}
+
+{% block content %}
+<h1>Welcome to Eco_Store add to cart!</h1>
+<!-- cart_detail.html -->
+{% for item in cart.cartitem_set.all %}
+    <p>{{ item.product.name }} x {{ item.quantity }}</p>
+{% endfor %}
+<button class="btn btn-primary">Proceed to Checkout</button>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    /* display: flex; */
+    justify-content:left;
+    align-items: normal;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+.container {
+    background-color: transparent;
+    width: 100%;
+    display:list-item;
+    margin-top: 0px;
+    max-width: 800px;
+    height: 565px;
+    padding: 0px;
+    border-radius: 10px;
+    border-color: #03ff105e;
+    box-shadow: 15 4px 15px rgb(255, 0, 0);
+}
+/* Hover Effects */
+.hover-effect:hover {
+    background-color: rgba(4, 25, 83, 0.178); /* Light blue background on hover */
+    transform: scale(1.05); /* Slightly increase size */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.hover-effect input {
+    background-color: transparent;
+    border: 1px solid #ffe600;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover input {
+    border-color: #fffb06;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.hover-effect-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect-btn:hover {
+    background-color: #68ff03; /* Darker blue on hover */
+    transform: scale(1.1); /* Increase button size */
+    box-shadow: 0 0 15px rgba(255, 2, 2, 0.5); /* Add shadow effect */
+}
+.form {
+    background-color: transparent;
+}

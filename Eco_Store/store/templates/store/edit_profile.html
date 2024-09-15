@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile - E-Commerce Store{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<div class="container mt-0">
+    <div class="row justify-content-center">
+        <div class="col-md-8 fade-in">
+            <h2 class="text-center slide-in mb-4">Edit Profile</h2>
+            <form method="post" enctype="multipart/form-data" class="bounce"> <!-- Added enctype for file upload -->
+                {% csrf_token %}
+                {{ form.as_p }} <!-- Form fields displayed as paragraphs -->
+                <button type="submit" class="btn btn-primary hover-effect-btn">Save changes</button> <!-- Hover effect for consistency -->
+            </form>
+            <a href="{% url 'view_profile' %}" class="btn btn-secondary hover-effect-btn mt-3">View Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

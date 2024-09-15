@@ -1,0 +1,112 @@
+body {
+    background: linear-gradient(#000000a8, rgba(49, 155, 255, 0.7)),
+    url("{% static 'images/snippet.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.navbar {
+    background-color: transparent;
+    /* Semi-transparent black background */
+    padding: 1rem 2rem;
+    /* Add some padding to the navbar */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
+    /* White text color for the brand and links */
+    transition: color 0.2s ease;
+    /* Add a smooth transition effect */
+}
+
+.nav-link:hover {
+    color: #1990ffd5 !important;
+    border: 1px;
+    border-color: #000000a8;
+    /* Change text color on hover to a yellow shade */
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+    /* White color for the toggle icon in dark mode */
+}
+
+.container {
+    width: 100%;
+    /* Set a maximum width for the container */
+    margin: auto;
+    /* Add some margin to the container */
+    padding: 0;
+    /* Add some padding to the container */
+    background-color: transparent;
+    /* Add a light gray background color to the container */
+    border: 1px solid #dddddd1e;
+    /* Add a light gray border to the container */
+    border-radius: 10px;
+    /* Add a rounded corner to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow to the container */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-out;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+.slide-in{
+    animation: slideIn 1s ease-in-out;
+}
+@keyframes bounceIn {
+    from{
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(0.9);
+        opacity: 1;
+
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.bounce-in{
+    animation: bounceIn 1s ease-out;
+}

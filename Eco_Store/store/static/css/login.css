@@ -1,0 +1,106 @@
+/* Set the background of the container to be transparent */
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: inherit;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 40px;
+    border-radius: 10px;
+    border-color: #03ff10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/* Animations */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Apply animations */
+.slide-in {
+    animation: slide-in 1s ease-in-out;
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+.bounce {
+    animation: bounce 0.5s ease-in-out;
+}
+
+.fade-out {
+    animation: fade-out 1s ease-in-out;
+}
+
+/* Hover Effects */
+.hover-effect:hover {
+    background-color: rgba(255, 217, 3, 0.808); /* Light blue background on hover */
+    transform: scale(1.05); /* Slightly increase size */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.hover-effect input {
+    background-color: transparent;
+    border: 1px solid #ffe600;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover input {
+    border-color: #fffb06;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.hover-effect-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect-btn:hover {
+    background-color: #68ff03; /* Darker blue on hover */
+    transform: scale(1.1); /* Increase button size */
+    box-shadow: 0 0 15px rgba(255, 2, 2, 0.5); /* Add shadow effect */
+}

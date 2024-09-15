@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - E-Commerce Store{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<div class="container mt-0">
+    <div class="row justify-content-center">
+        <div class="col-md-8 fade-in"> <!-- Centering content and adding animation class -->
+            <h2 class="mb-4 text-center slide-in">Your Profile</h2> <!-- Centered title with animation -->
+            <div class="profile-details">
+                {% if profile.image %}
+                    <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}" class="profile-pic"> <!-- Display profile picture if available -->
+                {% else %}
+                    <img src="{% static 'images/default-profile.png' %}" alt="{{ profile.user.username }}" class="profile-pic"> <!-- Default profile picture if none uploaded -->
+                {% endif %}
+                <p><strong>Address:</strong> {{ request.user.profile.address }}</p>
+                <p><strong>Phone:</strong> {{ request.user.profile.phone }}</p>
+                <a href="{% url 'edit_profile' %}" class="btn btn-primary hover-effect-btn">Edit Profile</a> <!-- Added hover effect to button -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
